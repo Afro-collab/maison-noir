@@ -247,6 +247,10 @@ footer{background:var(--black);color:#b9b3a0;padding:70px 0 26px;}
 .wa-service-btn:hover{border-color:rgba(201,162,39,.6);background:rgba(201,162,39,.06);}
 .wa-service-btn.suggested{border-color:var(--gold);background:rgba(201,162,39,.12);}
 .wa-service-btn.suggested::after{content:'Suggested for you';display:block;font-size:.6rem;color:var(--gold);margin-top:4px;letter-spacing:.4px;text-transform:uppercase;font-weight:600;}
+.wa-modal-back{display:inline-flex;align-items:center;gap:8px;background:none;border:none;color:var(--gold);font-size:.78rem;letter-spacing:.5px;text-transform:uppercase;font-weight:600;cursor:pointer;padding:0;margin-bottom:18px;}
+.wa-modal-back:hover{color:var(--gold-light);}
+#waSelectedServiceLabel{color:var(--gold);font-family:var(--serif);font-size:1.05rem;margin-bottom:22px;font-style:italic;}
+.wa-send-btn{width:100%;justify-content:center;margin-top:6px;}
 @media (max-width:480px){
   .wa-service-grid{grid-template-columns:1fr;}
   .wa-modal{padding:30px 24px;}
