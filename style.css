@@ -133,6 +133,15 @@ header.scrolled{background:rgba(17,17,17,.94);backdrop-filter:blur(6px);padding:
 .why-item i{font-size:1.3rem;color:var(--gold);}
 .why-item span{font-size:.85rem;font-weight:500;line-height:1.4;}
 
+.g-item.photo.video-tile{cursor:pointer;}
+.play-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(17,17,17,.72);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;z-index:3;transition:transform .25s ease;}
+.g-item.video-tile:hover .play-badge{transform:translate(-50%,-50%) scale(1.1);}
+.play-badge i{color:var(--gold);font-size:1.1rem;margin-left:3px;}
+.video-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:3000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;padding:20px;}
+.video-lightbox.open{opacity:1;pointer-events:auto;}
+.video-lightbox video{max-width:420px;width:100%;max-height:88vh;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6);}
+.video-lightbox-close{position:absolute;top:24px;right:28px;background:none;border:none;color:var(--champagne);font-size:2rem;line-height:1;cursor:pointer;width:44px;height:44px;}
+
 /* ============ PORTFOLIO ============ */
 .filter-row{display:flex;gap:10px;justify-content:center;margin-bottom:44px;flex-wrap:wrap;}
 .filter-btn{padding:9px 20px;font-size:.76rem;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--gold);color:var(--black);background:transparent;cursor:pointer;border-radius:30px;}

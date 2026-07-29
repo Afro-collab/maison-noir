@@ -231,6 +231,7 @@
       <button class="filter-btn" data-filter="brows">Brows &amp; Lashes</button>
       <button class="filter-btn" data-filter="makeup">Makeup</button>
       <button class="filter-btn" data-filter="bridal">Bridal &amp; Events</button>
+      <button class="filter-btn" data-filter="nails">Nails</button>
     </div>
     <div class="gallery reveal">
       <div class="g-item photo tall" data-category="brows"><img src="images/gallery-microblading.jpg" alt="Microblading eyebrows before and after comparison" loading="lazy" width="400" height="480"><span>Microblading — Before &amp; After</span></div>
@@ -246,6 +247,19 @@
       <div class="g-item photo tall" data-category="bridal"><img src="images/gallery-event-glam.jpg" alt="Elegant red dress event hair and makeup" loading="lazy" width="400" height="480"><span>Event Glam</span></div>
       <div class="g-item photo" data-category="makeup"><img src="images/gallery-editorial-glam.jpg" alt="Editorial glam sleek ponytail look" loading="lazy" width="400" height="190"><span>Editorial Glam</span></div>
       <div class="g-item photo" data-category="bridal"><img src="images/gallery-bridal-attire.jpg" alt="Traditional Habesha bridal dress with gold jewelry styling" loading="lazy" width="400" height="190"><span>Habesha Bridal Elegance</span></div>
+      <div class="g-item photo tall" data-category="makeup"><img src="images/gallery-makeup-hijab1.jpg" alt="Hijab-friendly glam makeup look" loading="lazy" width="400" height="480"><span>Hijab-Friendly Glam</span></div>
+      <div class="g-item photo" data-category="makeup"><img src="images/gallery-makeup-process1.jpg" alt="Makeup application in progress" loading="lazy" width="400" height="190"><span>Makeup Application In Progress</span></div>
+      <div class="g-item photo" data-category="brows"><img src="images/gallery-lash-macro1.jpg" alt="Eyelash extensions close-up detail" loading="lazy" width="400" height="190"><span>Lash Extension Detail</span></div>
+      <div class="g-item photo" data-category="brows"><img src="images/gallery-lash-lip-macro.jpg" alt="Lash and lip close-up detail" loading="lazy" width="400" height="190"><span>Lash &amp; Lip Detail</span></div>
+      <div class="g-item photo" data-category="makeup"><img src="images/gallery-glam-macro.jpg" alt="Glam makeup close-up detail" loading="lazy" width="400" height="190"><span>Glam Detail Shot</span></div>
+      <div class="g-item photo tall" data-category="makeup"><img src="images/gallery-makeup-glam2.jpg" alt="Full glam makeup application" loading="lazy" width="400" height="480"><span>Full Glam Application</span></div>
+      <div class="g-item photo" data-category="nails"><img src="images/gallery-nail-art.jpg" alt="Custom 3D nail art design" loading="lazy" width="400" height="190"><span>Custom Nail Art</span></div>
+      <div class="g-item photo video-tile" data-category="makeup" data-video="images/gallery-video-1.mp4"><img src="images/gallery-video-1-thumb.jpg" alt="Makeup transformation video" loading="lazy" width="400" height="190"><div class="play-badge"><i class="fa-solid fa-play"></i></div><span>Makeup Transformation</span></div>
+      <div class="g-item photo video-tile" data-category="makeup" data-video="images/gallery-video-2.mp4"><img src="images/gallery-video-2-thumb.jpg" alt="Glam session video" loading="lazy" width="400" height="190"><div class="play-badge"><i class="fa-solid fa-play"></i></div><span>Glam Session</span></div>
+      <div class="g-item photo video-tile" data-category="makeup" data-video="images/gallery-video-3.mp4"><img src="images/gallery-video-3-thumb.jpg" alt="Hijab glam look video" loading="lazy" width="400" height="190"><div class="play-badge"><i class="fa-solid fa-play"></i></div><span>Hijab Glam Look</span></div>
+      <div class="g-item photo video-tile" data-category="makeup" data-video="images/gallery-video-4.mp4"><img src="images/gallery-video-4-thumb.jpg" alt="Soft glam reveal video" loading="lazy" width="400" height="190"><div class="play-badge"><i class="fa-solid fa-play"></i></div><span>Soft Glam Reveal</span></div>
+      <div class="g-item photo video-tile" data-category="makeup" data-video="images/gallery-video-5.mp4"><img src="images/gallery-video-5-thumb.jpg" alt="Quick transformation video" loading="lazy" width="400" height="190"><div class="play-badge"><i class="fa-solid fa-play"></i></div><span>Quick Transformation</span></div>
+      <div class="g-item photo video-tile" data-category="makeup" data-video="images/gallery-video-6.mp4"><img src="images/gallery-video-6-thumb.jpg" alt="Finishing touches video" loading="lazy" width="400" height="190"><div class="play-badge"><i class="fa-solid fa-play"></i></div><span>Finishing Touches</span></div>
     </div>
   </div>
 </section>
@@ -384,6 +398,11 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
+<div class="video-lightbox" id="videoLightbox">
+  <button class="video-lightbox-close" id="videoLightboxClose" aria-label="Close video">&times;</button>
+  <video id="videoLightboxPlayer" controls playsinline></video>
+</div>
+
 </main>
 
 <footer>
@@ -453,6 +472,30 @@ document.querySelectorAll('.svc-tab').forEach(tab => {
     document.querySelector(`.svc-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
   });
 });
+
+// Portfolio video lightbox
+const videoLightbox = document.getElementById('videoLightbox');
+const videoPlayer = document.getElementById('videoLightboxPlayer');
+const videoLightboxClose = document.getElementById('videoLightboxClose');
+
+function closeVideoLightbox(){
+  videoLightbox.classList.remove('open');
+  videoPlayer.pause();
+  videoPlayer.removeAttribute('src');
+  videoPlayer.load();
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.video-tile').forEach(tile => {
+  tile.addEventListener('click', () => {
+    videoPlayer.src = tile.dataset.video;
+    videoLightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    videoPlayer.play().catch(() => {});
+  });
+});
+videoLightboxClose.addEventListener('click', closeVideoLightbox);
+videoLightbox.addEventListener('click', (e) => { if (e.target === videoLightbox) closeVideoLightbox(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && videoLightbox.classList.contains('open')) closeVideoLightbox(); });
 
 // Portfolio filter — actually filters gallery items by category
 document.querySelectorAll('.filter-btn').forEach(btn => {
