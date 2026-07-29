@@ -223,24 +223,29 @@
     <div class="section-head reveal">
       <span class="eyebrow">Portfolio</span>
       <h2>Work Worth Celebrating</h2>
-      <p>A look at recent bridal, editorial and event styling. Swap these placeholders for your own gallery photos before launch.</p>
+      <p>Real clients, real results — a look at the hair, brows, lashes and glam we deliver every week. Shared with our clients' consent.</p>
     </div>
     <div class="filter-row reveal">
-      <button class="filter-btn active">All</button>
-      <button class="filter-btn">Bridal</button>
-      <button class="filter-btn">Makeup</button>
-      <button class="filter-btn">Hairstyles</button>
-      <button class="filter-btn">Events</button>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="hair">Hair</button>
+      <button class="filter-btn" data-filter="brows">Brows &amp; Lashes</button>
+      <button class="filter-btn" data-filter="makeup">Makeup</button>
+      <button class="filter-btn" data-filter="bridal">Bridal &amp; Events</button>
     </div>
     <div class="gallery reveal">
-      <div class="g-item photo tall"><img src="images/gallery-bridal-glam.jpg" alt="Bridal hair and makeup with traditional gold jewelry" loading="lazy" width="400" height="400"><span>Bridal Glam &amp; Jewelry Styling</span></div>
-      <div class="g-item photo"><img src="images/gallery-wig-install.webp" alt="Braided lace wig install with curly hair" loading="lazy" width="400" height="190"><span>Braided Lace Wig Install</span></div>
-      <div class="g-item g3"><span>Knotless Braids</span></div>
-      <div class="g-item photo tall"><img src="images/gallery-bridal-attire.jpg" alt="Traditional Habesha bridal dress with gold jewelry styling" loading="lazy" width="400" height="480"><span>Habesha Bridal Elegance</span></div>
-      <div class="g-item photo"><img src="images/gallery-cultural-braids.jpg" alt="Child with traditional Ethiopian cornrow braids and gold jewelry" loading="lazy" width="400" height="190"><span>Cultural Braids &amp; Kids Styling</span></div>
-      <div class="g-item g6"><span>Editorial Makeup</span></div>
-      <div class="g-item g7"><span>Baby Shower Setup</span></div>
-      <div class="g-item g8"><span>Bridal Party Glam</span></div>
+      <div class="g-item photo tall" data-category="brows"><img src="images/gallery-microblading.jpg" alt="Microblading eyebrows before and after comparison" loading="lazy" width="400" height="480"><span>Microblading — Before &amp; After</span></div>
+      <div class="g-item photo" data-category="hair"><img src="images/gallery-hair-color.jpg" alt="Copper balayage hair color on curly hair" loading="lazy" width="400" height="190"><span>Hair Color &amp; Balayage</span></div>
+      <div class="g-item photo" data-category="brows"><img src="images/gallery-ombre-brows.jpg" alt="Ombre powder brows close-up result" loading="lazy" width="400" height="190"><span>Ombre Powder Brows</span></div>
+      <div class="g-item photo tall" data-category="hair"><img src="images/gallery-braiding.jpg" alt="Client with braided twist protective hairstyle" loading="lazy" width="400" height="480"><span>Braiding Services</span></div>
+      <div class="g-item photo" data-category="brows"><img src="images/gallery-lash-extensions.jpg" alt="Eyelash extensions close-up detail" loading="lazy" width="400" height="190"><span>Eyelash Extensions</span></div>
+      <div class="g-item photo" data-category="makeup"><img src="images/gallery-makeup-glam.jpg" alt="Full glam makeup with colorful eyeshadow" loading="lazy" width="400" height="190"><span>Professional Makeup</span></div>
+      <div class="g-item photo" data-category="hair"><img src="images/gallery-hair-extensions.jpg" alt="Voluminous curly hair extensions styling" loading="lazy" width="400" height="190"><span>Hair Extensions</span></div>
+      <div class="g-item photo" data-category="hair"><img src="images/gallery-haircut-styling.jpg" alt="Soft waves haircut and styling" loading="lazy" width="400" height="190"><span>Haircut &amp; Styling</span></div>
+      <div class="g-item photo" data-category="hair"><img src="images/gallery-styling-session.jpg" alt="Client getting hair curled in the styling chair at the studio" loading="lazy" width="400" height="190"><span>In the Chair — Styling Session</span></div>
+      <div class="g-item photo" data-category="makeup"><img src="images/gallery-birthday-glam.jpg" alt="Birthday celebration glam makeup look" loading="lazy" width="400" height="190"><span>Birthday Glam</span></div>
+      <div class="g-item photo tall" data-category="bridal"><img src="images/gallery-event-glam.jpg" alt="Elegant red dress event hair and makeup" loading="lazy" width="400" height="480"><span>Event Glam</span></div>
+      <div class="g-item photo" data-category="makeup"><img src="images/gallery-editorial-glam.jpg" alt="Editorial glam sleek ponytail look" loading="lazy" width="400" height="190"><span>Editorial Glam</span></div>
+      <div class="g-item photo" data-category="bridal"><img src="images/gallery-bridal-attire.jpg" alt="Traditional Habesha bridal dress with gold jewelry styling" loading="lazy" width="400" height="190"><span>Habesha Bridal Elegance</span></div>
     </div>
   </div>
 </section>
@@ -449,11 +454,16 @@ document.querySelectorAll('.svc-tab').forEach(tab => {
   });
 });
 
-// Portfolio filter (visual only — all items shown, category label used for future wiring)
+// Portfolio filter — actually filters gallery items by category
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    const filter = btn.dataset.filter || 'all';
+    document.querySelectorAll('.gallery .g-item').forEach(item => {
+      const match = filter === 'all' || item.dataset.category === filter;
+      item.style.display = match ? '' : 'none';
+    });
   });
 });
 
