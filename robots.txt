@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.richbeautybar.com/sitemap.xml
+Sitemap: https://richbeauty.bar/sitemap.xml

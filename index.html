@@ -73,6 +73,24 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What services does Rich Beauty Bar offer?", "acceptedAnswer": { "@type": "Answer", "text": "We offer Microblading, Ombre Powder Brows, Nail Services, Haircut & Styling, Braiding, Hair Color, Hair Extensions, Professional Makeup, and Eyelash Extensions — plus dedicated Silver, Gold, and Platinum Bridal Packages for wedding days and special events." } },
+    { "@type": "Question", "name": "How much do your services cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing varies by service: Nail Services start at $35, Haircut & Styling from $45, Hair Color from $95, Professional Makeup from $95, Microblading from $450, Ombre Powder Brows from $500, Braiding from $120, Eyelash Extensions from $120, and Hair Extensions from $250. Bridal Packages range from $350 (Silver) to $1,200 (Platinum)." } },
+    { "@type": "Question", "name": "How do I book an appointment?", "acceptedAnswer": { "@type": "Answer", "text": "Booking is done entirely through WhatsApp — tap any Book Now button on the site, or fill out the booking form in the Contact section, and we'll confirm your appointment directly in the chat." } },
+    { "@type": "Question", "name": "Where is Rich Beauty Bar located?", "acceptedAnswer": { "@type": "Answer", "text": "Our studio is located at 1110 Fidler Ln, Silver Spring, MD 20910. We proudly serve clients across Chicago, Silver Spring, Maryland, and Virginia." } },
+    { "@type": "Question", "name": "What are your business hours?", "acceptedAnswer": { "@type": "Answer", "text": "We're open Tuesday through Saturday, 9am–7pm. Sunday and Monday appointments are available by request." } },
+    { "@type": "Question", "name": "Do you offer bridal hair and makeup packages?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — our Silver ($350), Gold ($650), and Platinum ($1,200) Bridal Packages each include a consultation and day-of touch-ups. Gold adds a trial session and eyelash extensions, while Platinum includes hair extensions if needed, a bridal trial, ceremony touch-ups, and travel within Chicago, MD & VA." } },
+    { "@type": "Question", "name": "Do you travel to wedding or event venues?", "acceptedAnswer": { "@type": "Answer", "text": "Travel within Chicago, Maryland, and Virginia is included with our Platinum Luxury Bridal Package. For other services, message us on WhatsApp to ask about mobile availability for your event." } },
+    { "@type": "Question", "name": "Can I book makeup for a graduation, prom, or photoshoot?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely — our Professional Makeup service, starting at $95, is tailored for weddings, bridal parties, graduations, birthdays, photoshoots, prom, and corporate events." } },
+    { "@type": "Question", "name": "Is Rich Beauty Bar Black-owned?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Rich Beauty Bar is proudly Black-owned, founded to give women across Chicago, Silver Spring, Maryland and Virginia a beauty experience that matches the significance of their moments, from wedding days to the everyday." } },
+    { "@type": "Question", "name": "What if I need to reschedule or cancel my appointment?", "acceptedAnswer": { "@type": "Answer", "text": "Message us on WhatsApp as soon as you know you need to change your appointment, and we'll do our best to find a time that works for you." } }
+  ]
+}
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -87,6 +105,7 @@
       <a href="#bridal">Bridal</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a href="https://wa.me/12407912542?text=Hello%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="btn btn-gold mobile-book"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
     </nav>
@@ -408,6 +427,68 @@
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<style>
+.faq-list{max-width:820px;margin:0 auto;}
+.faq-item{border-bottom:1px solid #333;padding:6px 0;}
+.faq-item summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 4px;font-family:'Playfair Display',serif;font-size:1.08rem;color:var(--champagne);font-weight:600;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary .faq-icon{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:transform .25s ease;}
+.faq-item[open] summary .faq-icon{transform:rotate(45deg);}
+.faq-item p{padding:0 4px 20px;color:#b9b3a0;line-height:1.7;font-size:.95rem;}
+</style>
+<section class="section section-dark" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before booking. Still have a question? Message us on WhatsApp any time.</p>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>What services does Rich Beauty Bar offer?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>We offer Microblading, Ombre Powder Brows, Nail Services, Haircut &amp; Styling, Braiding, Hair Color, Hair Extensions, Professional Makeup, and Eyelash Extensions — plus dedicated Silver, Gold, and Platinum Bridal Packages for wedding days and special events.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much do your services cost?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>Pricing varies by service: Nail Services start at $35, Haircut &amp; Styling from $45, Hair Color from $95, Professional Makeup from $95, Microblading from $450, Ombre Powder Brows from $500, Braiding from $120, Eyelash Extensions from $120, and Hair Extensions from $250. Bridal Packages range from $350 (Silver) to $1,200 (Platinum). Message us with your desired service for an exact quote.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I book an appointment?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>Booking is done entirely through WhatsApp — tap any "Book Now" button on the site, or fill out the booking form in the Contact section below, and we'll confirm your appointment directly in the chat.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where is Rich Beauty Bar located?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>Our studio is located at 1110 Fidler Ln, Silver Spring, MD 20910. We proudly serve clients across Chicago, Silver Spring, Maryland, and Virginia.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What are your business hours?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>We're open Tuesday through Saturday, 9am–7pm. Sunday and Monday appointments are available by request — just message us on WhatsApp to check availability.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you offer bridal hair and makeup packages?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>Yes — our Silver ($350), Gold ($650), and Platinum ($1,200) Bridal Packages each include a consultation and day-of touch-ups. Gold adds a trial session and eyelash extensions, while Platinum includes hair extensions if needed, a bridal trial, ceremony touch-ups, and travel within Chicago, MD &amp; VA.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you travel to wedding or event venues?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>Travel within Chicago, Maryland, and Virginia is included with our Platinum Luxury Bridal Package. For other services, message us on WhatsApp to ask about mobile availability for your event.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I book makeup for a graduation, prom, or photoshoot?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>Absolutely — our Professional Makeup service (from $95) is tailored for weddings, bridal parties, graduations, birthdays, photoshoots, prom, and corporate events.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is Rich Beauty Bar Black-owned?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>Yes — Rich Beauty Bar is proudly Black-owned, founded to give women across Chicago, Silver Spring, Maryland and Virginia a beauty experience that matches the significance of their moments, from wedding days to the everyday.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I need to reschedule or cancel my appointment?<span class="faq-icon"><i class="fa-solid fa-plus"></i></span></summary>
+        <p>Message us on WhatsApp as soon as you know you need to change your appointment, and we'll do our best to find a time that works for you.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CTA BANNER ============ -->
 <section class="cta-banner">
   <div class="wrap cta-inner reveal">
@@ -486,7 +567,7 @@
         <p style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Beauty &middot; Confidence &middot; Elegance</p>
         <p style="font-size:.85rem;">Luxury hair, bridal beauty &amp; event styling for Chicago, Silver Spring, MD &amp; VA. Proudly Black-owned.</p>
       </div>
-      <div class="foot-col"><h5>Explore</h5><ul><li><a href="#services">Services</a></li><li><a href="#bridal">Bridal Packages</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#follow-us">Follow Us</a></li><li><a href="#about">About Us</a></li></ul></div>
+      <div class="foot-col"><h5>Explore</h5><ul><li><a href="#services">Services</a></li><li><a href="#bridal">Bridal Packages</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#follow-us">Follow Us</a></li><li><a href="#about">About Us</a></li><li><a href="#faq">FAQ</a></li></ul></div>
       <div class="foot-col"><h5>Services</h5><ul><li><a href="#services">Hair Styling</a></li><li><a href="#services">Makeup</a></li><li><a href="#services">Event Decor</a></li><li><a href="#bridal">Bridal</a></li></ul></div>
       <div class="foot-col"><h5>Contact</h5><ul><li>Chicago, IL &middot; Silver Spring, MD &middot; VA</li><li><a href="tel:+12407912542" style="color:inherit;">+1 (240) 791-2542</a></li><li><a href="mailto:richbeautybar72@gmail.com" style="color:inherit;">richbeautybar72@gmail.com</a></li><li><a href="https://t.me/richbeautybar" style="color:inherit;" target="_blank" rel="noopener">Telegram: @richbeautybar</a></li></ul></div>
     </div>
